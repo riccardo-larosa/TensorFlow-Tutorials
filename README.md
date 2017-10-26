@@ -109,7 +109,7 @@ These tutorials were developed on Linux using **Python 3.5 / 3.6** (the [Anacond
 
 There are reports that Python 2.7 gives error messages with these tutorials. Please make sure you are using **Python 3.5** or later!
 
-### Environment
+### Environment: Anaconda
 
 After installing [Anaconda](https://www.continuum.io/downloads), you should create a [conda environment](http://conda.pydata.org/docs/using/envs.html)
 so you do not destroy your main installation in case you make a mistake somewhere:
@@ -119,6 +119,23 @@ so you do not destroy your main installation in case you make a mistake somewher
 Now you can switch to the new environment by running the following (on Linux):
 
     source activate tf
+
+### Environment: Virtualenv
+
+If instead of Anaconda you decide to use virtualenv, follow the directions on [tensorsflow web site](https://www.tensorflow.org/install/install_mac).
+
+    virtualenv --system-site-packages -p python3 targetDirectory # for Python 3.n
+
+Before you activate the virtualenv make sure you have create a directory
+
+    ~/matplotlib
+
+and create a file `matplotlibrc` that contains `backend: TkAgg`
+
+After you activate the virtualenv (e.g.: tensorflow), you need to add it to the jupyter notebook kernel
+
+    pip install ipykernel
+    python -m ipykernel install --user --name=tensorflow-venv-name
 
 ### Required Packages
 
